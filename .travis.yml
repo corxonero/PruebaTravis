@@ -5,7 +5,7 @@ sudo: required
 dist: trusty
 before_install: echo 'before install'
 before_script:
-  - echo 'before script'
+  - echo 'Antes de script'
   - pwd
   - ls -a
   - git status

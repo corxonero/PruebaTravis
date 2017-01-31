@@ -12,7 +12,7 @@ before_script:
 script: phpunit Test.php
 after_success:
   - echo 'after success'
-  - git remote add production https://{GH_REF}
-  - git remote -v
-  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master > /dev/null 2>&1
+    - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+  - "chmod a+x /tmp/travis-automerge"
+  - "BRANCHES_TO_MERGE_REGEX='^f/' BRANCH_TO_MERGE_INTO=master GITHUB_REPO=https://github.com/AgoraUS-G1-1617/Autentication /tmp/travis-automerge"
 after_script: echo 'after scrip'
